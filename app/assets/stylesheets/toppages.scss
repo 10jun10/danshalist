@@ -1,0 +1,21 @@
+// Place all the styles related to the toppages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container{
+  background-image: image-url("17018.png");
+  height: 200px;
+  // background-size: cover;
+  background-position: bottom;
+  background-color:rgba(255,255,255,0.6);
+  background-blend-mode:lighten;
+}
+.main-container .text-center {
+  padding-top:75px;
+}
+.text-center {
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.main {
+  background-color: #C0C0C0;
+}
