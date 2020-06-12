@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      ユーザー画像
+      <%= form_with(model: @user, local: true) do |f| %>
+        <%= f.label :name, 'お名前' %>
+        <%= f.text_field :name %>
+        <%= f.label :introduction, '自己紹介' %>
+        <%= f.text_field :introduction %>
+        <%= f.submit '更新' %>
+      <% end %>
+      <%= @user.name %>
+      アイテム数
+      
+    </div>
+  </div>
+</div>

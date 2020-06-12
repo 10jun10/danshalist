@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       ユーザー画像
-      <%= @user.name %>
+      <%= @user.name %><%= link_to '(編集)', edit_user_path(@user) %>
       アイテム数
       
     </div>
