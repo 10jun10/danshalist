@@ -33,9 +33,9 @@
             <div class="card">
               <div class="card-img-top">
                 <%if item.image?%>
-                  <%= image_tag item.image.url, :size => '100x150' %>
+                  <%= image_tag item.image.to_s, :size => '100x150' %>
                 <% else %>
-                  <%= image_tag "/assets/default.jpeg", :size => '100x150' %>
+                  <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '100x150' %>
                 <% end %>
               </div>
               <div class="card-body bg-secondary">
