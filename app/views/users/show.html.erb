@@ -5,9 +5,9 @@
         <!--画像-->
         <div class="text-center pb-0 mb-1">
           <% if @user.image? %>
-            <%= image_tag @user.image.url, :size => '200x200', :class => 'rounded-circle' %>
+            <%= image_tag @user.image.to_s, :size => '200x200', :class => 'rounded-circle' %>
           <% else %>
-            <%= image_tag "/assets/default.jpeg", :size => '200x200', :class => 'rounded-circle' %>
+            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592050958/default_fyleea.jpg", :size => '200x200', :class => 'rounded-circle' %>
           <% end %>
         </div>
         <!--編集機能-->

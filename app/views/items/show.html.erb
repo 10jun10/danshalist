@@ -8,9 +8,9 @@
         
         <div class="text-center pt-0 ">
           <%if @item.image?%>
-            <%= image_tag @item.image.url, :size => '200x250' %>
+            <%= image_tag @item.image.to_s, :size => '200x250' %>
           <% else %>
-            <%= image_tag "/assets/default.jpeg", :size => '200x250', :class => "border" %>
+            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border" %>
           <% end %>
         </div>
         
