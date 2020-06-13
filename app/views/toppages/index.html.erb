@@ -10,7 +10,22 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      
+      <% @items.each do |item| %>
+        <div class="col-md-4 text-center mt-5 mb-5">
+          <%if item.image?%>
+            <%= image_tag item.image.url, :size => '200x200' %>
+          <% else %>
+            <%= image_tag "/assets/default.jpeg", :size => '200x200' %>
+          <% end %>
+          <div>
+            <%= link_to item.name, item %>
+              
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="pull-right mt-3">
+      <%= paginate @items %>
     </div>
   </div>
 </div>
