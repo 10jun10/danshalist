@@ -27,24 +27,26 @@
         <div class="text-center pb-1">
           <h5>アイテム数 <%= @user.items.count%></h5>
         </div>
-        <% @user.items.each do |item| %>
-        <div class="col-md-4 text-center mb-5">
-          <div class="card">
-            <div class="card-img-top">
-              <%if item.image?%>
-                <%= image_tag item.image.url, :size => '200x200' %>
-              <% else %>
-                <%= image_tag "/assets/default.jpeg", :size => '200x200' %>
-              <% end %>
-            </div>
-            <div class="card-body bg-secondary">
-              <div class="card-title">
-                <%= link_to item.name, item , class: 'text-light'%>
+        <div class="row">
+          <% @user.items.each do |item| %>
+          <div class="col-md-4 text-center mb-5">
+            <div class="card">
+              <div class="card-img-top">
+                <%if item.image?%>
+                  <%= image_tag item.image.url, :size => '100x150' %>
+                <% else %>
+                  <%= image_tag "/assets/default.jpeg", :size => '100x150' %>
+                <% end %>
               </div>
-            </div>
-          </div>  
+              <div class="card-body bg-secondary">
+                <div class="card-title">
+                  <%= link_to item.name, item , class: 'text-light'%>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <% end %>
         </div>
-      <% end %>
       </div>
     </div>
   </div>

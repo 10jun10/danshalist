@@ -10,7 +10,7 @@
       <div class="row mb-4">
       <div class="col-sm-6 offset-sm-3">
         <%= form_with(model: @user, local: true) do |f| %>
-          <%= render 'layouts/error_messages', model: f.object %>
+          
           <div class="form-group">
             <%= f.label :name, 'お名前' %><span class="text-danger">※</span>
             <%= f.text_field :name, class: 'form-control' %>
