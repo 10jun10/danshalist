@@ -18,7 +18,7 @@
           <table border="１" class="mx-auto">
             <tr>
               <td bgcolor="#EEEEEE" style="width: 120px;">ユーザー名</td>
-              <td><%= @item.user.name%></td>
+              <td><%= link_to @item.user.name, @item.user %></td>
             </tr>
             <tr>
               <td bgcolor="#EEEEEE" style="width: 120px;">アイテムの説明</td>
@@ -32,6 +32,9 @@
         <% if current_user == @item.user %>
           <%= link_to 'このアイテムを削除する', @item, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class:"btn btn-secondary btn-block mb-4" %>
         <% end %>
+        <div class="text-center">
+          <%= link_to '戻る', root_path%>
+        </div>
         
         
       </div>

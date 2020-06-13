@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="text-center">
     <h3>モノと人との出会い</h3>
-    <h3>DanshaList</h3>
+    <h2><span class="text-danger">D</span>ansha<span class="text-danger">L</span>ist</h2>
   </div>
 </div>
 <div class="text-center">
@@ -12,15 +12,20 @@
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-md-4 text-center mt-5 mb-5">
-          <%if item.image?%>
-            <%= image_tag item.image.url, :size => '200x200' %>
-          <% else %>
-            <%= image_tag "/assets/default.jpeg", :size => '200x200' %>
-          <% end %>
-          <div>
-            <%= link_to item.name, item %>
-              
-          </div>
+          <div class="card">
+            <div class="card-img-top">
+              <%if item.image?%>
+                <%= image_tag item.image.url, :size => '200x200' %>
+              <% else %>
+                <%= image_tag "/assets/default.jpeg", :size => '200x200' %>
+              <% end %>
+            </div>
+            <div class="card-body bg-secondary">
+              <div class="card-title">
+                <%= link_to item.name, item , class: 'text-light'%>
+              </div>
+            </div>
+          </div>  
         </div>
       <% end %>
     </div>

@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy, :edit]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   
   def new
     @item = Item.new
@@ -19,16 +20,12 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
   
   def update
-    @item = Item.find(params[:id])
-
     if @item.update(item_params)
       flash[:success] = 'アイテムが正常に更新されました'
       redirect_to @item
@@ -39,7 +36,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     flash[:success] = 'アイテムを削除しました'
     # redirect_back(fallback_location: root_path)
@@ -57,6 +53,10 @@ class ItemsController < ApplicationController
     unless @item
       redirect_to root_url
     end
+  end
+  
+  def set_item
+    @item = Item.find(params[:id]) 
   end
   
 end
