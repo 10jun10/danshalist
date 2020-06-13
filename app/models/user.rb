@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_secure_password
   # 画像アップロード
   mount_uploader :image, ImageUploader
+  #アイテムとの１対多
+  has_many :items
 end
