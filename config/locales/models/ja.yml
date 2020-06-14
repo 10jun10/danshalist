@@ -8,5 +8,6 @@ ja:
         name: お名前
         email: Eメール
         password: パスワード
+        password_confirmation: パスワード（確認）
       item:
         name: アイテム名
