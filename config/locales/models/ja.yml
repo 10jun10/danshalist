@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      item: アイテム
+    attributes:
+      user:
+        name: お名前
+        email: Eメール
+        password: パスワード
+      item:
+        name: アイテム名
