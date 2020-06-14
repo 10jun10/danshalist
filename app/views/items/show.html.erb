@@ -8,20 +8,20 @@
         
         <div class="text-center pt-0 ">
           <%if @item.image?%>
-            <%= image_tag @item.image.to_s, :size => '200x250' %>
+            <%= image_tag @item.image.to_s, :size => '200x250', :alt => 'アイテム画像' %>
           <% else %>
-            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border" %>
+            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border", :alt => 'アイテム画像' %>
           <% end %>
         </div>
         
         <div class="pt-0 pb-0">
-          <table border="１" class="mx-auto">
+          <table>
             <tr>
-              <td bgcolor="#EEEEEE" style="width: 120px;">ユーザー名</td>
+              <th>ユーザー名</th>
               <td><%= link_to @item.user.name, @item.user %></td>
             </tr>
             <tr>
-              <td bgcolor="#EEEEEE" style="width: 120px;">アイテムの説明</td>
+              <th>アイテムの説明</th>
               <td><%= @item.introduction%></td>
             </tr>
           </table>
@@ -42,7 +42,7 @@
             <div>
               <%#= c.user.name %>
               <% unless c.user.blank? %>
-                <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.image.to_s,class:"rounded-circle icon_image mr-3 mb-3",:size => '50x50'%></a>
+                <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.image.to_s,class:"rounded-circle icon_image mr-3 mb-3",:size => '50x50', :alt => 'アイコン画像'%></a>
               <% end %>
               <% unless c.user.blank? %>
                 <%= link_to c.user.name, user_path(c.user) %>
