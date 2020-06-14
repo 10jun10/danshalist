@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
     else
       @items = current_user.items.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'アイテムの追加に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
   
