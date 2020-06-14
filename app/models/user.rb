@@ -8,5 +8,7 @@ class User < ApplicationRecord
   # 画像アップロード
   mount_uploader :image, ImageUploader
   #アイテムとの１対多
-  has_many :items
+  has_many :items, dependent: :destroy
+  #コメント機能
+  has_many :comments
 end

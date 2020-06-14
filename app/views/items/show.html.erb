@@ -36,6 +36,33 @@
           <%= link_to '戻る', root_path%>
         </div>
         
+        <div class="comment-wrapper border-top　mb-10">
+          <p class="mt-5">コメント一覧</p>
+          <% @comments.each do |c| %>
+            <div>
+              <%#= c.user.name %>
+              <% unless c.user.blank? %>
+                <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.image.to_s,class:"rounded-circle icon_image mr-3 mb-3",:size => '50x50'%></a>
+              <% end %>
+              <% unless c.user.blank? %>
+                <%= link_to c.user.name, user_path(c.user) %>
+                <%#= c.user.name %>
+              <% end %>
+              <br />
+              <%= c.content %>
+              <hr>
+            </div>
+            <br />
+          <% end %>
+          <%# if user_signed_in? %>
+            <%= form_with(model: [@item, @comment], local: true) do |f| %>
+              <%= f.text_area :content, class: "form-control", rows: 5 %>
+              <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+                <i class="far fa-comments"></i> コメントする
+              <% end %>
+            <% end %>
+          <%# end %>
+        </div>
         
       </div>
     </div>

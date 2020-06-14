@@ -20,6 +20,8 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @comments = @item.comments
+    @comment = @item.comments.build
   end
   
   def edit
