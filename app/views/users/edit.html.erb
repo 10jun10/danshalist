@@ -15,6 +15,7 @@
         </div>
         <!--フォーム-->
         <%= form_with(model: @user, local: true) do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
           <div class="form-group text-center">
             <%= f.label :image,"画像" %>
             <%= f.file_field :image %>
