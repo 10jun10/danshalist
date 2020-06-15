@@ -1,24 +1,24 @@
-# README
+# DanshaList
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+大切に使ってきたけれど捨てたくないというモノを次に大切に使ってくれそうな人を見つけ譲るためのサービスです。
 
-Things you may want to cover:
+https://danshalist.herokuapp.com/
 
-* Ruby version
+## テストアカウント
 
-* System dependencies
+>メールアドレス:danshalist@example.com  
+>パスワード:danshalist2020  
 
-* Configuration
+## 環境
 
-* Database creation
+* 言語(Ruby 2.5.3)
+* フレームワーク(Rails 5.2.3)
+* 開発(Cloud9)
 
-* Database initialization
+## 機能・技術
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 画像(carrierwave,cloudinary)
+* ページネーション(kaminari)
+* エラーメッセージの日本語化(rails-i18n)
+* インフラ(Heroku)
+* デザイン(Bootstrap)
