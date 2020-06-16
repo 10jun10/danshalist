@@ -51,8 +51,12 @@
                 <%#= c.user.name %>
               <% end %>
               <br />
-              <%= c.content %>
+              <p><%= c.content %></p>
+              <% if current_user == c.user %>
+                <p><%= link_to 'コメントを削除する', item_comment_path(c.item.id ,c.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }%></p>
+              <% end %>
               <hr>
+              
             </div>
             <br />
           <% end %>
