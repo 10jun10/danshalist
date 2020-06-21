@@ -13,15 +13,15 @@
             <%= form_with(model: @user, local: true) do |f| %>
               <%= render 'layouts/error_messages', model: f.object %>
               <div class="form-group">
-                <%= f.label :name, 'お名前' %><span class="text-danger">※</span>
+                <%= f.label :name, 'お名前' %><span class="text-danger">　※</span>
                 <%= f.text_field :name, class: 'form-control' %>
               </div>
               <div class="form-group">
-                <%= f.label :email, 'メールアドレス' %><span class="text-danger">※</span>
+                <%= f.label :email, 'メールアドレス' %><span class="text-danger">　※</span>
                 <%= f.email_field :email, class: 'form-control' %>
               </div>
               <div class="form-group">
-                <%= f.label :password, 'パスワード' %><span class="text-danger">※</span>
+                <%= f.label :password, 'パスワード（6字以上）' %><span class="text-danger">※</span>
                 <%= f.password_field :password, class: 'form-control' %>
                </div>
               <div class="form-group">

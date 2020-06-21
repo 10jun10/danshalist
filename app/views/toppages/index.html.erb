@@ -9,6 +9,13 @@
 </div>
 <div class="main">
   <div class="container">
+    <!--検索-->
+    <!--<p>検索</p>-->
+    <!--  <#%= form_tag(items_path,:method => 'get') do %>-->
+    <!--    <%#= text_field_tag :search %>-->
+    <!--    <%#= submit_tag 'Search', :name => nil %>-->
+    <!--  <%# end %>-->
+      <!--アイテム一覧-->
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-md-4 text-center mt-0 mb-0">
@@ -34,3 +41,11 @@
     </div>
   </div>
 </div>
+
+<!--<ul><%# @posts.each do |post| %>-->
+<!--  <li>-->
+<!--    <%#= link_to post.title, post %>-->
+<!--    <%#= post.created_at %>-->
+<!--    <%#= post.status %>-->
+<!--  </li>-->
+<!--</ul>-->
