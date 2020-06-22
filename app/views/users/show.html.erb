@@ -20,7 +20,8 @@
         <div class="card">
           <p class="mb-0 text-center pt-0 pb-0">自己紹介</p>
           <div class="card-body">
-            <%= @user.introduction %>
+            <!--<%#= @user.introduction %>-->
+            <%= simple_format @user.introduction %>
           </div>
         </div>
         <!--アイテム一覧-->
