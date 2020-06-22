@@ -24,6 +24,10 @@
               <th>アイテムの説明</th>
               <td><%= @item.introduction%></td>
             </tr>
+            <tr>
+              <th>🕔</th>
+              <td><%= time_ago_in_words(@item.updated_at)%>前</td>
+            </tr>
           </table>
         </div>
         <% if current_user == @item.user %>
