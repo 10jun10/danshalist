@@ -44,6 +44,11 @@ class ItemsController < ApplicationController
     redirect_to root_url
   end
   
+  # def search
+  #   #Viewのformで取得したパラメータをモデルに渡す
+  #   @items = Item.page(params[:page]).search(params[:search])
+  # end
+  
   private
   
   def item_params
