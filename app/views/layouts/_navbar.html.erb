@@ -8,6 +8,14 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
+          <!--検索-->
+          <!--<dl class="searchbox">-->
+          <!--  <%#= search_form_for @search, url: items_path do |f| %>-->
+          <!--    <dt><%#= f.text_field :name_cont ,placeholder: 'アイテムを入力' %></dt>-->
+          <!--    <dd><%#= f.submit ("検索") , class: 'search-btn'%></dd>-->
+          <!--  <%# end %>-->
+          <!--</dl>-->
+        
           <li class="nav-item"><%= link_to '追加', new_item_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>
           <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete , class: 'nav-link'%></li>

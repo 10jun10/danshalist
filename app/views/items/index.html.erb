@@ -11,13 +11,13 @@
   <div class="container">
     <!--検索-->
     <div class="text-center">
-      <%= search_form_for @search, url: root_path do |f| %>
+      <%= search_form_for @search, url: items_path do |f| %>
         <%#= f.label :name_cont, 'アイテム名' %>
         <%= f.search_field :name_cont %>
         <%= f.submit '検索' %>
       <% end %>
     </div>
-    <!--アイテム一覧-->
+    
     <div class="row">
       <%= render 'items/items', items: @items%>
     </div>

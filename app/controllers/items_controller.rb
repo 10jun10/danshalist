@@ -3,6 +3,13 @@ class ItemsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
+  def index
+    # @items = Item.all.order(id: :desc).page(params[:page]).per(18)
+    # ransack
+    @search = Item.ransack(params[:q])
+    @items = @search.result.page(params[:page]).per(18)
+  end
+  
   def new
     @item = Item.new
   end
