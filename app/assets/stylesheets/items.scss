@@ -38,3 +38,23 @@ svg {
 //     }
 // }
 
+/*div要素全体にリンクをつけるために必要な要素*/
+.card {
+    position: relative;
+}
+.card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+
+/* 以下見た目をわかりやすくするための設定*/
+.card {
+    border: solid .5px #000000;
+}
+.card a:hover{/* マウスオーバー時に色変更*/
+    opacity: 0.1;
+    background-color: #000000;
+}
