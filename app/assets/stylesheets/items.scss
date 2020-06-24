@@ -12,4 +12,29 @@ th {
 th, td {
     border: solid 1px;
 }
+#item_image {
+    display:none;
+}
+#image {
+    cursor: pointer;
+}
+.relative {
+    
+    position: relative;
+}
+svg {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}
+
+// .relative {
+//     position: relative;
+    
+//     i {
+//         position: absolute;
+//         top: 30%;
+//         left: 30%;
+//     }
+// }
 

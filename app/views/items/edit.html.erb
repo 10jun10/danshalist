@@ -9,20 +9,37 @@
           <h2>アイテム情報を入力</h2>
         </div>
         <div class="border mb-4"></div>
-        <div class="text-center pt-0 pb-o">
-          <%if @item.image?%>
-            <%= image_tag @item.image.to_s, :size => '200x250', :alt => "アイテム画像" %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border", :alt => "アイテム画像" %>
-          <% end %>
-        </div>
+        <!--<div class="text-center pt-0 pb-o">-->
+        <!--  <#%if @item.image?%>-->
+        <!--    <#= image_tag @item.image.to_s, :size => '200x250', :alt => "アイテム画像" %>-->
+        <!--  <%# else %>-->
+        <!--    <%#= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border", :alt => "アイテム画像" %>-->
+        <!--  <%# end %>-->
+        <!--</div>-->
           
         <%= form_with(model: @item, local: true) do |f| %>
-          <%= render 'layouts/error_messages', model: f.object %>
-          <div class="form-group text-center pt-0 pb-0">
-            <%= f.label :image,"画像" %>
-            <%= f.file_field :image %>
+          <div class="text-center pt-0 pb-0 relative">
+            <%if @item.image?%>
+              <%= image_tag @item.image.to_s, :size => '200x250', :alt => "アイテム画像", :class => "item-image", :id => "image"  %>
+              
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border", :alt => "アイテム画像", :class => "item-image", :id => "image" %>
+              
+            <% end %>
+            <i class="fas fa-camera" style="font-size: 60px;"></i>
           </div>
+          <%= f.file_field :image %>
+          
+          <%= render 'layouts/error_messages', model: f.object %>
+          
+          <!--画像-->
+          <!--<div class="form-group text-center pt-0 pb-0">-->
+          <!--  <%#= f.label :image,"画像" %>-->
+          <!--  <%#= f.file_field :image %>-->
+          <!--</div>-->
+          
+          
+          
           <div class="form-group">
             <%= f.label :name, 'アイテム名' %>
             <%= f.text_field :name, class: 'form-control'%>

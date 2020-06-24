@@ -4,8 +4,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
   def index
-    # @items = Item.all.order(id: :desc).page(params[:page]).per(18)
-    # ransack
     @search = Item.ransack(params[:q])
     @items = @search.result.order(updated_at: :desc).page(params[:page]).per(18)
   end
@@ -47,15 +45,9 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     flash[:success] = 'アイテムを削除しました'
-    # redirect_back(fallback_location: root_path)
     redirect_to root_url
   end
-  
-  # def search
-  #   #Viewのformで取得したパラメータをモデルに渡す
-  #   @items = Item.page(params[:page]).search(params[:search])
-  # end
-  
+
   private
   
   def item_params
