@@ -1,13 +1,6 @@
 class ApplicationController < ActionController::Base
-  # before_action :set_search
   
   include SessionsHelper
-  
-  # def set_search
-  #@search = Article.search(params[:q])
-  #   @search = Item.ransack(params[:q]) #ransackメソッド推奨
-  #   @search_items = @search.result.page(params[:page])
-  # end
   
   private
   

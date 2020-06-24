@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, except: [:index]
   before_action :correct_user, only: [:destroy, :edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
