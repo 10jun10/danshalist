@@ -8,8 +8,10 @@
         <%= form_with(model: @item, local: true) do |f| %>
         <!--画像新-->
         <div class="text-center pt-0 pb-0 relative">
-            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border item-image", :alt => "アイテム画像", :id => "image" %>
-          <i class="fas fa-camera" style="font-size: 60px;"></i>
+          <div class="img_wrap" id="image">
+            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border item-image", :alt => "アイテム画像" %>
+            <i class="fas fa-camera" style="font-size: 60px;"></i>
+          </div>
         </div>
         <%= f.file_field :image %>
           <%= render 'layouts/error_messages', model: f.object %>
