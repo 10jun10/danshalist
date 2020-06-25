@@ -19,14 +19,31 @@ th, td {
     cursor: pointer;
 }
 .relative {
-    
     position: relative;
 }
 svg {
+    color: white;
     position: absolute;
     top: 35%;
     left: 45%;
 }
+
+.img_wrap{
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+}
+.img_wrap img{
+  opacity: 0.6;
+}
+.img_wrap:hover img{
+  opacity: 0.4;
+  transition-duration: 0.3s;
+}
+
 
 // .relative {
 //     position: relative;

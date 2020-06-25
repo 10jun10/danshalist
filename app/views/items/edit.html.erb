@@ -19,14 +19,16 @@
           
         <%= form_with(model: @item, local: true) do |f| %>
           <div class="text-center pt-0 pb-0 relative">
-            <%if @item.image?%>
-              <%= image_tag @item.image.to_s, :size => '200x250', :alt => "アイテム画像", :class => "item-image", :id => "image"  %>
-              
-            <% else %>
-              <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border", :alt => "アイテム画像", :class => "item-image", :id => "image" %>
-              
-            <% end %>
-            <i class="fas fa-camera" style="font-size: 60px;"></i>
+            <div class="img_wrap" id="image">
+              <%if @item.image?%>
+                <%= image_tag @item.image.to_s, :size => '200x250', :alt => "アイテム画像", :class => "border item-image" %>
+                
+              <% else %>
+                <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592051211/m_e_others_500_dr00a1.png", :size => '200x250', :class => "border item-image", :alt => "アイテム画像" %>
+                
+              <% end %>
+              <i class="fas fa-camera" style="font-size: 60px;"></i>
+            </div>
           </div>
           <%= f.file_field :image %>
           
