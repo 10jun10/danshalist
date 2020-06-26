@@ -6,6 +6,6 @@ class Item < ApplicationRecord
   # 画像アップロード
   mount_uploader :image, ImageUploader
   #コメント機能
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
 end
