@@ -32,7 +32,7 @@
           <% if @user.id == current_user.id %>
   
           <% else %>
-            <i class="far fa-envelope"></i>
+            
             <% if @isRoom == true %>
               <!--<p class="btn btn-secondary">-->
               <a href="/rooms/<%= @roomId %>" >ダイレクトメッセージ</a>

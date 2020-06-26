@@ -11,7 +11,7 @@ class User < ApplicationRecord
   #アイテムとの１対多
   has_many :items, dependent: :destroy
   #コメント機能
-  has_many :comments
+  has_many :comments, dependent: :destroy
   # ダイレクトメッセージ機能
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy

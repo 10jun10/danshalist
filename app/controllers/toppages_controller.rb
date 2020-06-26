@@ -7,6 +7,11 @@ class ToppagesController < ApplicationController
     @search = Item.ransack(params[:q])
     @items = @search.result.order(updated_at: :desc).page(params[:page]).per(18)
   end
+  
+  def about
+    
+  end
+  
 end
 
 #.where(activated: true).
