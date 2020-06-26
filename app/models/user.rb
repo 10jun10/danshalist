@@ -12,4 +12,7 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   #コメント機能
   has_many :comments
+  # ダイレクトメッセージ機能
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 end

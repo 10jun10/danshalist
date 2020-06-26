@@ -1,0 +1,42 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.box1 {
+    position: relative;
+    padding: 0.5em 0.7em;
+    margin: 2em 0;
+    background: #e6f4ff;
+    color: #5c98d4;
+    font-weight: bold;
+}
+.box1:after {
+    position: absolute;
+    content: '';
+    top: -15px;
+    left: 0;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #e6f4ff;
+    border-left: 15px solid transparent;
+    
+    // border: 15px solid transparent;
+    // border-top: 15px solid #e6f4ff;
+    width: 0;
+    height: 0;
+}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+/* beforeで三角を表現 */
+// .box1:before{
+//   content: '';
+//   position: absolute;
+//   left: 20px;
+//   top: -15px;
+//   display: block;
+//   width: 0;
+//   height: 0;
+//   border-right: 15px solid transparent;
+//   border-bottom: 15px solid #fff3ad;
+//   border-left: 15px solid transparent;
+// }

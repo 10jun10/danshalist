@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="container">
+    <div class="text-center">
+      <h3><span class="text-danger">D</span>ansha<span class="text-danger">L</span>ist</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2 border  mt-4 mb-4">
+        <h1>DM</h1>
+        
+        <h4>参加者</h4>
+        <% @entries.each do |e| %>
+          <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+        <% end %>
+        
+        <hr>
+        <% if @messages.present? %>
+          <% @messages.each do |m| %>
+            <% if m.user.image? %>
+              <%= image_tag m.user.image.to_s, :size => '25x25', :class => 'rounded-circle', :alt => 'ユーザーアイコン' %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592050958/default_fyleea.jpg", :size => '25x25', :class => 'rounded-circle', :alt => 'ユーザーアイコン' %>
+            <% end %>
+            <strong><a href="/users/<%= m.user_id %>"><%= m.user.name %>さん</a></strong>
+            <div class="box1">
+              <p><%= m.content %></p>
+            </div>
+            <!--<small>by <strong><a href="/users/<%#= m.user_id %>"><%#= m.user.name %>さん</a></strong></small>-->
+            <hr>
+          <% end %>
+        <% else %>
+          <h3 class="text-center">メッセージはまだありません</h3>
+        <% end %>
+        
+        <%= form_for @message do |f| %>
+          <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+          <%= f.hidden_field :room_id, :value => @room.id %>
+          <br>
+          <%= f.submit "投稿する" %>
+        <% end %>
+        
+      </div>
+    </div>
+        <div class="text-center">
+          <%= link_to "ホームへ戻る", root_path %>
+        </div>
+  </div>
+</div>

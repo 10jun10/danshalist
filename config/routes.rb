@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :items do
     resources :comments, only: [:create, :destroy]
   end
+  
+  # メッセージ
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show]
 end
