@@ -1,14 +1,14 @@
-<header>
-  <nav class="navbar navbar-expand-sm navbar-light ml-5 mr-5">
-    <a class="navbar-brand" href="/"><span class="text-danger">D</span>ansha<span class="text-danger">L</span>ist</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!--<header>-->
+<!--  <nav class="navbar navbar-expand-sm navbar-light ml-5 mr-5">-->
+<!--    <a class="navbar-brand" href="/"><span class="text-danger">D</span>ansha<span class="text-danger">L</span>ist</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to 'DanshaListについて', toppages_about_path, class: 'nav-link' %></li>
-        <% if logged_in? %>
+<!--    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav">-->
+<!--        <li class="nav-item"><%#= link_to 'DanshaListについて', toppages_about_path, class: 'nav-link' %></li>-->
+<!--        <%# if logged_in? %>-->
           <!--検索-->
           <!--<dl class="searchbox">-->
           <!--  <%#= search_form_for @search, url: items_path do |f| %>-->
@@ -18,9 +18,9 @@
           <!--</dl>-->
         
           
-          <li class="nav-item"><%= link_to '追加', new_item_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>
-          <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete , class: 'nav-link'%></li>
+<!--          <li class="nav-item"><%#= link_to '追加', new_item_path, class: 'nav-link' %></li>-->
+<!--          <li class="nav-item"><%#= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>-->
+<!--          <li class="nav-item"><%#= link_to 'ログアウト', logout_path, method: :delete , class: 'nav-link'%></li>-->
           
           <!--<li class="nav-item dropdown">-->
           <!--  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%#= current_user.name %></a>-->
@@ -30,6 +30,34 @@
           <!--    <li class="dropdown-item"><%#= link_to 'ログアウト', logout_path, method: :delete %></li>-->
           <!--  </ul>-->
           <!--</li>-->
+<!--        <%# else %>-->
+<!--          <li class="nav-item"><%#= link_to '会員登録', signup_path, class: 'nav-link' %></li>-->
+<!--          <li class="nav-item"><%#= link_to 'ログイン', login_path, class: 'nav-link' %></li>-->
+<!--        <%# end %>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</header>-->
+
+<header>
+  <nav class="navbar navbar-expand-sm navbar-light ml-5 mr-5">
+    <a class="navbar-brand" href="/"><span class="text-danger">D</span>ansha<span class="text-danger">L</span>ist</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+          
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to 'DanshaListについて', toppages_about_path, class: 'nav-link' %></li>
+        <% if logged_in? %>
+          
+          
+          
+          <li class="nav-item"><%= link_to '追加', new_item_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>
+          <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete , class: 'nav-link'%></li>
         <% else %>
           <li class="nav-item"><%= link_to '会員登録', signup_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
@@ -37,4 +65,12 @@
       </ul>
     </div>
   </nav>
+  <!--検索-->
+    <div class="ml-5 mr-5 pl-4 pr-4 mb-2 text-right search_box">
+      <%= search_form_for @search, url: items_path do |f| %>
+        <%= f.search_field :name_cont, :placeholder => 'お探しのアイテムを入力してください', :style => "width: 70%; border: .1px solid;"  %>
+        <%= button_tag sanitize('<i class="fa fa-search"></i>検索'), :type => "submit",
+        :class =>"btn btn-default btn-s-md  pt-1 pl-0" %>
+      <% end %>
+    </div>
 </header>
