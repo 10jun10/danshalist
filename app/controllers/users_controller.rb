@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     #メッセージ
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
+    unless @user.id == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id then

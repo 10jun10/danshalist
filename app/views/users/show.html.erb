@@ -29,10 +29,7 @@
         
         <!--ダイレクトメッセージ-->
         <div class="text-center">
-          <% if @user.id == current_user.id %>
-  
-          <% else %>
-            
+          <% unless @user.id == current_user.id %>
             <% if @isRoom == true %>
               <!--<p class="btn btn-secondary">-->
               <a href="/rooms/<%= @roomId %>" >ダイレクトメッセージ</a>
