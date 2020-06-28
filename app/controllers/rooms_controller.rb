@@ -17,4 +17,11 @@ class RoomsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+  
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    flash[:success] = 'メッセージルームを削除しました'
+    redirect_to root_url
+  end
 end

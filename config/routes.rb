@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   
   # メッセージ
   resources :messages, :only => [:create]
-  resources :rooms, :only => [:create, :show]
+  resources :rooms, :only => [:create, :show, :destroy]
 end
