@@ -57,10 +57,22 @@
                 <%= link_to c.user.name, user_path(c.user) %>
                 <p><%= c.content %></p>
                 🕔<%= time_ago_in_words(c.created_at)%>前
+                <!--コメント削除-->
+                <% if current_user == c.user %>
+                  <%= link_to 'コメントを削除する', item_comment_path(c.item.id ,c.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+                <% end %>
+                
+                
+                
+                <!--テスト-->
+                <% if current_user == @item.user && current_user != c.user %>
+                  <div class="text-right">
+                    <%= link_to "この方にDMを送る", user_path(c.user) %>
+                  </div>
+                <% end %>
               <% end %>
-              <% if current_user == c.user %>
-                <%= link_to 'コメントを削除する', item_comment_path(c.item.id ,c.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-              <% end %>
+              
+              
               
               
               <hr>
