@@ -26,8 +26,27 @@ describe UsersController, type: :controller do
   end
   
   # create
-  # describe 'POST #create' do
-  #   content '正しいユーザー情報が渡ってきた場合' do
-  #   end
-  # end
+  describe 'POST #create' do
+    context 'パラメータが妥当な場合' do
+      
+      it 'リクエストが成功すること' do
+        post :create, params: { user: FactoryBot.attributes_for(:user) }
+        expect(response.status).to eq 302
+      end
+      
+      it 'ユーザーが登録されること' do
+        expect do
+          post :create, params: { user: FactoryBot.attributes_for(:user) }
+        end.to change(User, :count).by(1)
+      end
+      
+      it 'リダイレクトすること' do
+        post :create, params: { user: FactoryBot.attributes_for(:user) }
+        expect(response).to redirect_to login_path
+      end
+    end
+   
+
+   
+  end
 end

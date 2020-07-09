@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_image {
+    display:none;
+}
+
+.user_img_wrap{
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+}
+.user_img_wrap img{
+  opacity: 0.6;
+}
+.user_img_wrap:hover img{
+  opacity: 0.4;
+  transition-duration: 0.3s;
+}

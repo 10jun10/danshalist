@@ -17,9 +17,6 @@
     border-right: 15px solid transparent;
     border-bottom: 15px solid #e6f4ff;
     border-left: 15px solid transparent;
-    
-    // border: 15px solid transparent;
-    // border-top: 15px solid #e6f4ff;
     width: 0;
     height: 0;
 }
@@ -27,16 +24,3 @@
     margin: 0; 
     padding: 0;
 }
-/* beforeで三角を表現 */
-// .box1:before{
-//   content: '';
-//   position: absolute;
-//   left: 20px;
-//   top: -15px;
-//   display: block;
-//   width: 0;
-//   height: 0;
-//   border-right: 15px solid transparent;
-//   border-bottom: 15px solid #fff3ad;
-//   border-left: 15px solid transparent;
-// }

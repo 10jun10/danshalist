@@ -5,21 +5,24 @@
     </div>
     <div class="row">
       <div class="col-sm-8 offset-sm-2 border  mt-4 mb-4">
-        <!--画像表示-->
-        <div class="text-center pb-0">
-          <% if @user.image? %>
-            <%= image_tag @user.image.to_s, :size => '200x200', :class => 'rounded-circle', :alt => 'ユーザーアイコン' %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592050958/default_fyleea.jpg", :size => '200x200', :class => 'rounded-circle', :alt => 'ユーザーアイコン' %>
-          <% end %>
-        </div>
         <!--フォーム-->
         <%= form_with(model: @user, local: true) do |f| %>
-          <%= render 'layouts/error_messages', model: f.object %>
-          <div class="form-group text-center">
-            <%= f.label :image,"画像" %>
-            <%= f.file_field :image %>
+          <!--画像表示-->
+          <div class="text-center pb-0 relative">
+            <div class="user_img_wrap rounded-circle" id="image">
+              <% if @user.image? %>
+                <%= image_tag @user.image.to_s, :size => '200x200', :class => 'rounded-circle user-image', :alt => 'ユーザーアイコン' %>
+              <% else %>
+                <%= image_tag "https://res.cloudinary.com/hqf8k8ltl/image/upload/v1592050958/default_fyleea.jpg", :size => '200x200', :class => 'rounded-circle user-image', :alt => 'ユーザーアイコン' %>
+              <% end %>
+              <i class="fas fa-camera" style="font-size: 60px;"></i>
+            </div>
           </div>
+          <%= f.file_field :image %>
+          
+          
+          <%= render 'layouts/error_messages', model: f.object %>
+          
           <div class="form-group">
             <%= f.label :name, 'お名前' %>
             <%= f.text_field :name, class: 'form-control'%>
