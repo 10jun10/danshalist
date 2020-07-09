@@ -60,7 +60,7 @@
                 <p><%= c.content %></p>
                 🕔<%= time_ago_in_words(c.created_at)%>前
                 <!--コメント削除-->
-                <% if current_user == c.user %>
+                <% if current_user == c.user || current_user == @item.user %>
                   <%= link_to 'コメントを削除する', item_comment_path(c.item.id ,c.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
                 <% end %>
                 
