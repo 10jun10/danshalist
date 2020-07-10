@@ -17,8 +17,10 @@ https://danshalist.herokuapp.com/
 
 ## 機能・技術
 
+* インフラ(Heroku)
 * 画像(carrierwave,cloudinary)
 * ページネーション(kaminari)
+* 検索(ransack)
+* 静的解析ツール（rubocop）
 * エラーメッセージの日本語化(rails-i18n)
-* インフラ(Heroku)
 * デザイン(Bootstrap)
