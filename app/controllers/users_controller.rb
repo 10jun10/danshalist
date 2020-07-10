@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: [:show, :edit, :update]
   
   def show
     #メッセージ
@@ -55,12 +51,6 @@ class UsersController < ApplicationController
       flash.now[:danger] = "更新できませんでした"
       render :edit
     end
-  end
-  
-  def destroy
-    @user.destroy
-    flash[:success] = 'ユーザーを削除しました'
-    redirect_back(fallback_location: root_path)
   end
   
   private
