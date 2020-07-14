@@ -15,4 +15,7 @@ class User < ApplicationRecord
   # ダイレクトメッセージ機能
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  # 通知
+  has_many :active_notifications, foreign_key:"visitor_id", class_name: "Notification", dependent: :destroy
+  has_many :passive_notifications, foreign_key:"visited_id", class_name: "Notification", dependent: :destroy
 end

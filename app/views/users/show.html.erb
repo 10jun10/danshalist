@@ -15,14 +15,22 @@
           <%= @user.name %>
           <% if current_user == @user %>
             <%= link_to '(編集)', edit_user_path(@user) %>
-          <% end %>
+            <!--通知-->
+            <% if unchecked_notifications.any? %>
+              <i class="fa fa-circle" style="color: gold;"></i>
+            <% end %>
+            <%= link_to '通知', notifications_path(current_user) %>
+            <% end %>
         </div>
+        
+        
+        
         <!--自己紹介-->
         <div class="card">
           <p class="mb-0 text-center pt-0 pb-0">自己紹介</p>
           <div class="card-body">
-            <!--<%#= @user.introduction %>-->
-            <%= simple_format @user.introduction %>
+            <%= @user.introduction %>
+            <%#= simple_format @user.introduction %>
           </div>
         </div>
         

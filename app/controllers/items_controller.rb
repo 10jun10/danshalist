@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :introduction,length: { maximum: 300 }
+  
   def index
     @search = Item.ransack(params[:q])
     @items = @search.result.order(updated_at: :desc).page(params[:page]).per(18)

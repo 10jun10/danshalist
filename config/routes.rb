@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users
+  resources :users, only: [:show, :new, :create, :edit, :update]
   
   resources :items do
     resources :comments, only: [:create, :destroy]
@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   # メッセージ
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :destroy]
+  # 通知
+  resources :notifications, only: [:index, :destroy]
 end

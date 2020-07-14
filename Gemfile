@@ -41,7 +41,7 @@ gem 'ransack'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 5.4.1'
 
 
 
@@ -79,3 +79,4 @@ group :production do
 end
 
 gem 'rails-i18n'
+gem 'font-awesome-sass', '~> 5.4.1'

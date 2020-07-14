@@ -15,7 +15,9 @@
           
           
           <li class="nav-item"><%= link_to '追加', new_item_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>
+          <li class="nav-item"><% if unchecked_notifications.any? %>
+                      <i class="fa fa-circle" style="color: gold;"></i>
+                    <% end %><%= link_to 'マイページ', user_path(current_user) , class: 'nav-link'%></li>
           <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete , class: 'nav-link'%></li>
         <% else %>
           <li class="nav-item"><%= link_to '会員登録', signup_path, class: 'nav-link' %></li>
